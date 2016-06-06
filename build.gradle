@@ -1,14 +1,31 @@
-group 'project.workspace'
-version '1.0-SNAPSHOT'
-
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
-sourceCompatibility = 1.8
-
+// tag::repositories[]
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
+// end::repositories[]
+
+// tag::jar[]
+jar {
+  baseName = 'java-practice'
+  version = '1.0-SNAPSHOT'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
-    testCompile 'junit:junit:4.11'
+  testCompile 'junit:junit:4.11'
 }
+// end::dependencies[]
+
+// tag::wrapper[]
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.3'
+}
+// end::wrapper[]
