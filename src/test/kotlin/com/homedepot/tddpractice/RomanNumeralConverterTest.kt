@@ -1,78 +1,58 @@
 package com.homedepot.tddpractice
 
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+import org.junit.runners.Parameterized.Parameters
 import kotlin.test.assertEquals
 
-class RomanNumeralConverterTest {
-  val rnc = RomanNumeralConverter()
+@RunWith(Parameterized::class)
+class RomanNumeralConverterTest(val value: Int, val expected: String) {
+  private val rnc = RomanNumeralConverter()
 
-  @Test
-  fun testIf1ReturnAnI() {
-    val expected = "I"
-    val actual: String = rnc.convertRecursive(1)
-    assertEquals(expected, actual)
+  companion object {
+    @JvmStatic
+    @Parameters
+    fun generateData(): Collection<Array<Any>> {
+      return listOf(
+        arrayOf(0, ""),
+        arrayOf(1, "I"),
+        arrayOf(2, "II"),
+        arrayOf(3, "III"),
+        arrayOf(4, "IV"),
+        arrayOf(5, "V"),
+        arrayOf(6, "VI"),
+        arrayOf(7, "VII"),
+        arrayOf(8, "VIII"),
+        arrayOf(9, "IX"),
+        arrayOf(10, "X"),
+        arrayOf(11, "XI"),
+        arrayOf(12, "XII"),
+        arrayOf(13, "XIII"),
+        arrayOf(14, "XIV"),
+        arrayOf(15, "XV"),
+        arrayOf(16, "XVI"),
+        arrayOf(17, "XVII"),
+        arrayOf(18, "XVIII"),
+        arrayOf(19, "XIX"),
+        arrayOf(30, "XXX"),
+        arrayOf(42, "XLII"),
+        arrayOf(49, "XLIX"),
+        arrayOf(50, "L"),
+        arrayOf(56, "LVI"),
+        arrayOf(62, "LXII"),
+        arrayOf(79, "LXXIX"),
+        arrayOf(89, "LXXXIX"),
+        arrayOf(97, "XCVII"),
+        arrayOf(100, "this number is not being handled"),
+        arrayOf(-1, "this number is not being handled")
+      )
+    }
   }
 
   @Test
-  fun testIf2ReturnsII() {
-    val expected = "II"
-    val actual: String = rnc.convertRecursive(2)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf3ReturnsIII() {
-    val expected = "III"
-    val actual: String = rnc.convertRecursive(3)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf4ReturnsIV() {
-    val expected = "IV"
-    val actual: String = rnc.convertRecursive(4)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf5ReturnsV() {
-    val expected = "V"
-    val actual: String = rnc.convertRecursive(5)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf6ReturnsVI() {
-    val expected = "VI"
-    val actual: String = rnc.convertRecursive(6)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf13ReturnsXIII() {
-    val expected = "XIII"
-    val actual: String = rnc.convertRecursive(13)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf16ReturnsXVI() {
-    val expected = "XVI"
-    val actual: String = rnc.convertRecursive(16)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf35ReturnsXXXV() {
-    val expected = "XXXV"
-    val actual: String = rnc.convertRecursive(35)
-    assertEquals(expected, actual)
-  }
-
-  @Test
-  fun testIf49ReturnsXLIX() {
-    val expected = "XLIX"
-    val actual: String = rnc.convertRecursive(49)
+  fun shouldReturnExpectedRomanFromInteger() {
+    val actual: String = rnc.convertIntegerToRomanNumeral(value)
     assertEquals(expected, actual)
   }
 }
