@@ -8,8 +8,6 @@ import kotlin.test.assertEquals
 
 @RunWith(Parameterized::class)
 class RomanNumeralConverterTest(val value: Int, val expected: String) {
-  private val rnc = RomanNumeralConverter()
-
   companion object {
     @JvmStatic
     @Parameters
@@ -270,7 +268,7 @@ class RomanNumeralConverterTest(val value: Int, val expected: String) {
 
   @Test
   fun shouldReturnExpectedRomanFromInteger() {
-    val actual: String = rnc.convertIntegerToRomanNumeral(value)
+    val actual: String = RomanNumeralConverter.convertIntegerToRomanNumeral(value)
     assertEquals(expected, actual)
   }
 }

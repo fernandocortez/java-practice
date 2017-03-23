@@ -1,6 +1,6 @@
 package com.homedepot.tddpractice
 
-class RomanNumeralConverter {
+object RomanNumeralConverter {
   fun convertIntegerToRomanNumeral(i: Int): String {
     return when (i) {
       0 -> ""
