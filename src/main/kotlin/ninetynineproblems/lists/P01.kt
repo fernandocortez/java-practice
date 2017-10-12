@@ -1,6 +1,6 @@
 package ninetynineproblems.lists
 
-import java.util.NoSuchElementException
+import java.util.*
 
 fun last(list: List<String>?): String {
   if (list == null || list.isEmpty()) {

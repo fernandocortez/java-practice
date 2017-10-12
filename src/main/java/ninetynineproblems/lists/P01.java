@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class P01 {
+
   public static String last(List<String> list) {
     if (list == null || list.isEmpty()) {
       throw new NoSuchElementException();

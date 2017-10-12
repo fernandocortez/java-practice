@@ -1,11 +1,12 @@
 package com.codingbat.warmup1;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Test;
+
 public class NearHundredTest {
+
   @Test
   public void expect93ToBeNearHundred() {
     assertTrue(NearHundred.nearHundred(93));

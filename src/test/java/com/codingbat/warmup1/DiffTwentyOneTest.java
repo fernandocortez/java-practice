@@ -1,10 +1,11 @@
 package com.codingbat.warmup1;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+
 public class DiffTwentyOneTest {
+
   @Test
   public void shouldEqualTwoWhenDiffingNineteen() {
     assertEquals(2, DiffTwentyOne.diff21(19));

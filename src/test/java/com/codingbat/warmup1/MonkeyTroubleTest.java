@@ -1,11 +1,12 @@
 package com.codingbat.warmup1;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Test;
+
 public class MonkeyTroubleTest {
+
   @Test
   public void willBeInTroubleIfBothMonkeysAreSmiling() {
     assertTrue(MonkeyTrouble.monkeyTrouble(true, true));

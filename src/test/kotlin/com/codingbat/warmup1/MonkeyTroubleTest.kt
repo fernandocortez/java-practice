@@ -1,8 +1,8 @@
 package com.codingbat.warmup1
 
 import org.junit.Test
-import kotlin.test.assertTrue
 import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class MonkeyTroubleTestKt {
   @Test

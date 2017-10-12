@@ -1,10 +1,11 @@
 package com.codingbat.warmup1;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Test;
+
 public class SumDoubleTest {
+
   @Test
   public void shouldEqualThreeForOneTwoSumDouble() {
     assertEquals(3, SumDouble.sumDouble(1, 2));
